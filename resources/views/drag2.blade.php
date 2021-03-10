@@ -7,7 +7,7 @@
         <div id="dropzone"></div>
     </div>
     <div id="outzone" ondragover="allowDrop(event)" class="container container1 col-4">
-        <div>choose from Element</div>
+        <div>choose from Elements</div>
         <div class="content1" style="margin-bottom: 63px">
             <img id="profilepic" src="">
         </div>
