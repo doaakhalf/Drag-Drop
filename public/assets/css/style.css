@@ -1,0 +1,35 @@
+body {
+    font-size: 32px;
+}
+.drop-zone--over{
+    opacity: 0.5;
+}
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+.jobNumber{
+    width: 100px;
+    height: 100px;
+    resize: both;
+overflow: auto;
+}
+#profilepic {
+   
+    width: 100px;
+    height: 100px;
+    background: rgb(147, 151, 151);
+    border: 8px dotted gray;
+    top: 50px;
+    /* border-radius: 60%; */
+
+}
+#dropzone {
+    top: 150px;
+   
+    height: 400px;
+    background: rgb(217, 154, 233);
+    border: dotted 4px;
+}

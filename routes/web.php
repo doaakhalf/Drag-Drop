@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/drag', function () {
+    return view('drag2');
+});
+Route::get('/drag2', function () {
+    return view('drag');
+});
