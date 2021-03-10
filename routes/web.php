@@ -19,6 +19,3 @@ Route::get('/', function () {
 Route::get('/drag', function () {
     return view('drag2');
 });
-Route::get('/drag2', function () {
-    return view('drag');
-});
