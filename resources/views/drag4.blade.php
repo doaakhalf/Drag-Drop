@@ -292,10 +292,15 @@
         </div>
 
         <div id="outzone" style="background: #1d1461; color: wheat;" class="col-md-6" ondragover="allowDrop(event)">
+        <div class="row">
+            <div class="col-3">
             <div class="name-img">
                 <div id="name" class="name">{{@$user->name}}اسم الموظف</div>
                 
             </div>
+        </div>
+        <div class="col-3">
+
             <div class="job-comp">
                 <div class="job" id="job">
 
@@ -304,32 +309,55 @@
                 <div class="comp">
                 </div>
             </div>
-            <br/>
-            <div class="categories-wrap">
-                <div id="categories" class="categories">
+        </div>
+        <div class="col-3">
 
-                    الفعالية
-                </div>
+        <div class="categories-wrap">
+            <div id="categories" class="categories">
+
+                الفعالية
             </div>
+        </div>
+        </div>
+        </div>
+            <br/>
+           <div class="row">
+               <div class="col-6">
             <div id="allowed-areas" class="allowed-areas">
                 <div id="title-area" class="title">المناطق المسموح بها :</div>
                 <div id="area-numbers" class="area-numbers">
                     {{-- <span class="allowed">   </span> --}}
                 </div>
             </div>
+        </div>
+        <div class="col-6">
+
             <div class="job-number-qr-code">
                 <div id="job-number" class="job-number">
                     <div class="title">الرقم الوظيفى</div>
                     <br/>
                     <div class="value" style="text-align: center">###</div>
                 </div>
-                <div id="qr-code" class="qr-code" style="float: left; display: inline-block;">
-                    <img src="{{@$user->spqr}}" alt="qr code" />
-                </div>
+               
             </div>
-            <div id="profilepic" class="profile-img" style="display: inline-block" >
+        </div>
+        </div>
+            <br/>
+            <div class="row">
+        <div class="col-4" style="padding-left: 53px;">
+
+            <div id="profilepic" class="profile-img" style="display: inline-block;" >
                 <img src="{{@$user->image_id ? @$user->image->url:"k"}}" alt="profile" />
             </div>
+        </div>
+        <div class="col-4">
+
+            <div id="qr-code" class="qr-code" style="float: left; display: inline-block;">
+                <img src='{{@$user->spqr}}' alt="qr code" />
+            </div>
+        </div>
+        </div>
+            <br/>
         </div>
 
         <!---------------end id front---------------------->
