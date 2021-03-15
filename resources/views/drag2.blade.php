@@ -4,7 +4,10 @@
     <div ondragover="allowDrop(event)" class="container container2 col-8">
 
 
-        <div id="dropzone"></div>
+        <div id="dropzone">
+          
+
+        </div>
     </div>
     <div id="outzone" ondragover="allowDrop(event)" class="container container1 col-4">
         <div>choose from Elements</div>
@@ -14,7 +17,7 @@
 
 
         <div class="text content2" style="display: block">
-            <input type="text" id="name" draggable="true" value="jsaj" onmouseout="console.log('d')" name="name">
+            <p type="text" id="name" draggable="true" style="border: none" value="اسم الموظف" onmouseout="console.log('d')" name="name">اسم الموظف</p>
             <input onchange="changeColor()" type="color" id="inputcolor" name="inputcolor">
 
         </div>

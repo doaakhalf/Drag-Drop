@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\card;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/drag', function () {
-    return view('drag2');
+    return view('drag4');
 });
+Route::get('/drag3', function () {
+    $cards=card::all();
+    $length=count($cards);
+    return view('view',compact('cards','length'));
+});
+Route::post('/saveData','App\Http\Controllers\DragDropController@store');

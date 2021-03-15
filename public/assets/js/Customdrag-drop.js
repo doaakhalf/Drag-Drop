@@ -2,6 +2,29 @@ const nameinput=document.getElementById('name');
 const jobNumber=document.getElementById('jobNumber');
 const dropzone=document.getElementById('dropzone');
 const outzone=document.getElementById('outzone');
+$(document).on('click','#save', function(e){
+    e.preventDefault();
+  
+    $.ajax({
+        url: '/saveData',
+        type: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+         // not POST, laravel won't allow it
+         
+        data:{
+         
+            div:document.getElementById('frontzone').innerHTML
+        },
+        success: function(data){
+            console.log(data);	// here comes the login form	
+            location.reload();
+        },
+        error: function(data){
+        },
+    });
+});
 $("#profilepic").draggable({
     drag:function(){
       this.style.zIndex="2";
@@ -26,8 +49,8 @@ function changeColor(){
        nameinput.style.left = x+'px';
        nameinput.style.top = y+'px';
        nameinput.style.textAlign = "right";
-       nameinput.style.width = '406px';
-       nameinput.style.height = '50px';
+     
+       $('#name').appendTo($('#dropzone'));
 
 
    })
@@ -60,6 +83,7 @@ function changeColor(){
        droppedelement.style.position = "absolute";
        droppedelement.style.left = x+'px';
        droppedelement.style.top = y+'px';
+       dropzone.append(droppedelement);
        // dropzone.appendChild(droppedelement)
        dropzone.classList.remove("drop-zone--over")
 
@@ -103,3 +127,4 @@ function changeColor(){
        dropzone.classList.remove("drop-zone--over")
 
    })
+  
