@@ -6,7 +6,7 @@ const outzone = document.getElementById('outzone');
 
 $(document).on('click', '#save', function (e) {
     e.preventDefault();
-
+console.log(document.getElementById('dropzone').innerHTML);
     $.ajax({
         url: '/saveData',
         type: "POST",
