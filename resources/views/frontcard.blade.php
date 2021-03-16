@@ -285,10 +285,10 @@
 @php
 // echo $newc=str_replace('{{$user-&gt;name}}amp;', 'dd', $cards[0]->tags);
 $src=@$user->image_id ? @$user->image->url : asset('images/user.jpg');
-$srcQr='src="'.$src.'" alt="qr-code" style=" width: 200px;
-  height: 300px;
+$srcQr='src="'.$src.'" alt="الصوره الشخصية" style=" width: 200px;
+  height: 200px;
   object-fit: contain;"';
-$newc=str_replace('alt="qr code"', $srcQr, $cards[0]->tags);
+$newc=str_replace('alt="الصوره الشخصية"', $srcQr, $cards[0]->tags);
 echo($newc);
 @endphp
 <div class="container">

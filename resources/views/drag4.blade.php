@@ -385,7 +385,7 @@
                             <div class="col-4" style="padding-left: 53px;">
 
                                 <div id="profilepic" class="profile-img" style="display: inline-block;">
-                                    <img src="{{@$user->image_id ? @$user->image->url:"k"}}" alt="الصوره الشخصية" />
+                                    <img  alt="الصوره الشخصية" />
                                 </div>
                             </div>
                             <div class="col-4">
