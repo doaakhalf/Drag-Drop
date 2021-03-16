@@ -23,6 +23,6 @@ Route::get('/drag', function () {
 Route::get('/drag3', function () {
     $cards=card::all();
     $length=count($cards);
-    return view('view',compact('cards','length'));
+    return view('frontcard',compact('cards','length'));
 });
 Route::post('/saveData','App\Http\Controllers\DragDropController@store');

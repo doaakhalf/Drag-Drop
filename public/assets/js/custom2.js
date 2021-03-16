@@ -1,12 +1,12 @@
 const nameinput = document.getElementById('name');
 const jobNumber = document.getElementById('jobNumber');
 const dropzone = document.getElementById('dropzone');
-const outzone = document.getElementById('outzone');
+const outzone = document.getElementById('elements');
 
 
 $(document).on('click', '#save', function (e) {
     e.preventDefault();
-console.log(document.getElementById('dropzone').innerHTML);
+console.log(document.getElementById('parent').innerHTML);
     $.ajax({
         url: '/saveData',
         type: "POST",
@@ -109,7 +109,7 @@ $("#dropzone").droppable({
 
     }
 })
-$("#outzone").droppable({
+$("#elements").droppable({
 
     drop: function (event, ui) {
         // $(this).css('background', 'rgb(105 1 90)');
@@ -120,7 +120,7 @@ $("#outzone").droppable({
             left: ui.draggable.position().left,
             position: 'absolute'
         });
-        $('#outzone').append($(ui.draggable));
+        $('#elements').append($(ui.draggable));
 
     },
     over: function (event, ui) {
@@ -151,3 +151,21 @@ $("#outzone").droppable({
 //     dropzone.classList.remove("drop-zone--over")
 
 // })
+function createCard(){
+ $parent=document.getElementById('card');
+ $outzone=document.getElementById('outzone');
+ $elements=document.getElementById('elements');
+
+ $cardFront=document.getElementById('idFront');
+ $width=document.getElementById('cardWidth').value;
+ $height=document.getElementById('cardHeight').value;
+ $cardFront.setAttribute("style","width:"+$width+"px;"+"height:"+$height+"px");
+//  $outzone.style.height=$height+"px";
+//  $elements.style.height=$height+"px";
+
+//  $cardFront.setAttribute("style","height:"+$height+"px");
+ $parent.style.display="block";
+console.log($cardFront);
+
+
+}

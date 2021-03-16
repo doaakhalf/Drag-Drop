@@ -27,10 +27,55 @@ overflow: auto;
 
 }
 #dropzone {
-    width: 413px;
+    /* width: 413px; */
     /* top: 150px;
   
     height: 600px;
     background: rgb(217, 154, 233);
     border: dotted 4px; */
+}
+#outzone,#elements{
+    height: 700px;
+
+}
+#myTab{
+    background-color: #f9e560;
+    border: 2px solid #dedede;
+    border-radius: 10px;
+}
+#save{
+    width: 100%;
+border-radius: 10px;
+}
+#parent{
+    border: 2px gray solid;
+    border-radius: 10px;
+    margin-right: 16px;
+    padding-left: 20px;
+    padding-top: 18px;
+    display: inline-table;
+    min-height: 600px;
+}
+.square{
+    border: 1px solid #e0deda;
+    border-radius: 10px;
+    margin-top: 22px !important;
+    margin-left: 22px !important;
+
+    min-height: 80px;
+}
+.create{
+    border: 2px gray solid;
+    border-radius: 10px;
+    margin-top: 25px !important;
+    margin-bottom: 20px;
+    background-color: #f9e560;
+    padding-top: 10px;
+}
+.btncreate{
+    background-color: #291c86 !important;
+    border-color: #1d1461 !important;
+    margin-bottom: 22px;
+    margin-top: 22px;
+    width: 66%;
 }

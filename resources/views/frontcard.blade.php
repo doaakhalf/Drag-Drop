@@ -282,142 +282,36 @@
 
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}" />
-
+@php
+// echo $newc=str_replace('{{$user-&gt;name}}amp;', 'dd', $cards[0]->tags);
+$src=@$user->image_id ? @$user->image->url : asset('images/user.jpg');
+$srcQr='src="'.$src.'" alt="qr-code" style=" width: 200px;
+  height: 300px;
+  object-fit: contain;"';
+$newc=str_replace('alt="qr code"', $srcQr, $cards[0]->tags);
+echo($newc);
+@endphp
 <div class="container">
     <!---------------start id front---------------------->
-    <div class="row clearfix create">
-        <div class="col-6">
-           <input type="number" step="any" name="width" id="cardWidth"> <span dir="rtl">الطول:</span>
-        </div>
-        <div class="col-6">
-            <input type="number" step="any" name="height" id="cardHeight"><span dir="rtl">العرض:</span>
 
-        </div>
-        <div class="col-6">
-            <button onclick="createCard()" style="    margin-left: 48%;" class="btn btn-primary btncreate" name="create">انشاء
-                كارت</button>
-        </div>
-    </div>
-
-    {{-- ///////////////// --}}
-    <div class="row clearfix" id="card" style="display: none">
+    <div class="row clearfix">
         <!---------------start id front---------------------->
         <div class="col-md-12" style="display: flex">
-            <div class="col-md-6" id="parent" ondragover="allowDrop(event)">
+            <div class="col-md-6" ondragover="allowDrop(event)">
 
-                <div class="id-front" id="idFront" ondragover="allowDrop(event)">
+                <div class="id-front" ondragover="allowDrop(event)">
                     <div class="id-wrap" id="dropzone">
 
                     </div>
                 </div>
             </div>
 
-
-            <div id="outzone" style="border-radius:10px;background: #1d1461; color: wheat;" class="col-md-6"
-                ondragover="allowDrop(event)">
-
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#elements"
-                            type="button" role="tab" aria-controls="elements" aria-selected="true">العناصر</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#prop"
-                            type="button" role="tab" aria-controls="prop" aria-selected="false">الخصائص</button>
-                    </li>
-
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="elements" role="tabpanel" aria-labelledby="home-tab">
-                        {{--  --}}
-                        <div class="row container">
-                            <div class="col-3 square">
-                                <div class="name-img">
-                                    <div id="name" class="name">{{@$user->name}}اسم الموظف</div>
-
-                                </div>
-                            </div>
-                            <div class="col-3 square">
-
-                                <div class="job-comp">
-                                    <div class="job" id="job">
-
-                                        المهنة
-                                    </div>
-                                    <div class="comp">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-3 square">
-
-                                <div class="categories-wrap">
-                                    <div id="categories" class="categories">
-
-                                        الفعالية
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="row container">
-                            <div class="col-6">
-                                <div id="allowed-areas" class="allowed-areas">
-                                    <div id="title-area" class="title">المناطق المسموح بها :</div>
-                                    <div id="area-numbers" class="area-numbers">
-                                        {{-- <span class="allowed">   </span> --}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 square">
-
-                                <div class="job-number-qr-code">
-                                    <div id="job-number" class="job-number">
-                                        <div class="title">الرقم الوظيفى</div>
-                                        <br />
-                                        <div class="value" style="text-align: center">###</div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="row container">
-                            <div class="col-4" style="padding-left: 53px;">
-
-                                <div id="profilepic" class="profile-img" style="display: inline-block;">
-                                    <img src="{{@$user->image_id ? @$user->image->url:"k"}}" alt="الصوره الشخصية" />
-                                </div>
-                            </div>
-                            <div class="col-4">
-
-                                <div id="qr-code" class="qr-code" style="float: left; display: inline-block;">
-                                    <img src='{{@$user->spqr}}' alt="qr code" />
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        {{--  --}}
-                    </div>
-                    <div class="tab-pane fade" id="prop" role="tabpanel" aria-labelledby="profile-tab">...</div>
-
-                </div>
-
-
-            </div>
-          
-
+         
 
             <!---------------end id front---------------------->
 
-        </div>
-        <br/>
-        <div class="row" style="    margin-top: 50px;">
-            <div class="col-6 offset-6">
-        <button type="button" name="save" id="save">save</button>
 
-            </div>
         </div>
-
     </div>
 </div>
 
